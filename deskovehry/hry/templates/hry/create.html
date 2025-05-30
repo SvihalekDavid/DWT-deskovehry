@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block titulek_stranky %}
+    {% if hra %}Upravit deskovou hru{% else %}Přidat deskovou hru{% endif %}
+{% endblock %}
+
+{% block obsah_stranky %}
+    <h2>{% if hra %}Upravit{% else %}Přidat{% endif %} deskovou hru</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">
+            {% if hra %}Uložit změny{% else %}Přidat{% endif %}
+        </button>
+        <a href="{% url 'seznam_her' %}" class="btn btn-secondary">Zpět</a>
+    </form>
+{% endblock %}

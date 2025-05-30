@@ -17,11 +17,12 @@
             <th>Počet hráčů</th>
         </tr>
     </thead>
+    <a href="{% url 'pridat_hru' %}" class="btn btn-primary mb-3">+ Přidat hru</a>
     <tbody>
         {% for hra in hry %}
         <tr>
             <td>{{ hra.nazev }}</td>
-            <td>{{ hra.popis|default:"-" }}</td>
+            <td>{{ hra.popis|default:"-"|safe }}</td>
             <td>{{ hra.datum_vydani|date:"d.m.Y" }}</td>
             <td>
                 {% if hra.cena %}
@@ -34,6 +35,9 @@
             <td>
                 <a href="{% url 'smazat_hru' hra.id %}" class="btn btn-danger btn-sm">
                     Smazat
+                </a>
+                <a href="{% url 'upravit_hru' hra.id %}" class="btn btn-warning btn-sm">
+                    Upravit
                 </a>
             </td>
         </tr>
