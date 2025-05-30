@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block titulek_stranky %}
+    Změna přezdívky
+{% endblock %}
+
+{% block obsah_stranky %}
+    <h2>Změň si přezdívku</h2>
+
+    <form method="post" class="mb-3">
+        {% csrf_token %}
+        {{ formular.as_p }}
+        <button type="submit" class="btn btn-primary">Nastavit</button>
+    </form>
+
+    {% if nick %}
+        <p><strong>Aktuální přezdívka:</strong> {{ nick }}</p>
+    {% endif %}
+{% endblock %}

@@ -9,7 +9,10 @@
 </head>
 <body>
     <header class="bg-dark text-white p-3">
-        <h1 class="text-center">Deskovehry</h1>
+        <h1 class="text-center">Deskové hry</h1>
+        {% if nick %}
+            <p class="text-center">Zdravím tě, {{ nick }} 👋</p>
+        {% endif %}
     </header>
 
     <main class="container mt-4">

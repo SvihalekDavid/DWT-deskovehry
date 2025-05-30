@@ -62,6 +62,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'hry.context_processors.nick_context'
             ],
         },
     },
@@ -74,10 +75,14 @@ WSGI_APPLICATION = 'deskovehry.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "SVIHADAV",
+        "USER": "SVIHADAV",
+        "PASSWORD": "Password1!",
+        "HOST": "147.32.228.124",
+        "PORT": "3310",
+        }
 }
 
 
