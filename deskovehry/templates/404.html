@@ -5,6 +5,13 @@
 {% endblock %}
 
 {% block obsah_stranky %}
-    <h1>404 – Stránka nenalezena</h1>
-    <a href="/" class="btn btn-primary">Zpět na hlavní stránku</a>
+<div class="text-center mt-5">
+    <h1 class="display-4 text-danger">404 – Stránka nenalezena</h1>
+    <p class="lead mt-3">Omlouváme se, ale požadovaná stránka neexistuje.</p>
+
+    <div class="mt-4 d-flex justify-content-center gap-3">
+        <a href="/" class="btn btn-primary btn-lg">Domů</a>
+        <a href="{% url 'seznam_her' %}" class="btn btn-outline-secondary btn-lg">Seznam her</a>
+    </div>
+</div>
 {% endblock %}

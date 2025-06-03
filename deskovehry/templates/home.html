@@ -1,11 +1,22 @@
-<!DOCTYPE html>
-<html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <title>Aplikace Deskovehry</title>
-</head>
-<body>
-    <h1>Vítejte</h1>
-    <p>TODO: udělat hezkou responzivní stránku</p>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block titulek_stranky %}
+    Vítejte v aplikaci Deskovehry
+{% endblock %}
+
+{% block obsah_stranky %}
+<div class="text-center">
+    <h1 class="mb-4">Vítejte v aplikaci Deskových her 🎲</h1>
+    {% if nick %}
+        <p class="lead">Ahoj, {{ nick }}! Vítej zpět.</p>
+    {% else %}
+        <p class="lead">Zadej si přezdívku nebo rovnou začni přidávat hry.</p>
+    {% endif %}
+
+    <div class="d-flex justify-content-center gap-3 mt-4">
+        <a href="{% url 'seznam_her' %}" class="btn btn-primary btn-lg">Seznam her</a>
+        <a href="{% url 'pridat_hru' %}" class="btn btn-success btn-lg">Přidat novou hru</a>
+        <a href="{% url 'uzivatel_nick' %}" class="btn btn-secondary btn-lg">Nastavit přezdívku</a>
+    </div>
+</div>
+{% endblock %}
